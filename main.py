@@ -10,7 +10,7 @@ st.title("AI Podcast")
 st.image("header_img.png", use_column_width=True)
 
 # Input API key
-api_key = st.text_input("Enter your OpenAI API key:", type="password")
+api_key = st.sidebar.text_input("Enter your OpenAI API key:", type="password")
 if not api_key:
     st.warning("Please enter your OpenAI API key to proceed.")
     st.stop()
