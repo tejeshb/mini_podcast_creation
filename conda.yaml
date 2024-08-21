@@ -12,5 +12,6 @@ dependencies:
   - ffmpeg
   - python-dotenv
   - streamlit
+  - pipreqs
   - pip:
       - git+https://github.com/openai/whisper.git 
