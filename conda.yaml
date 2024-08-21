@@ -1,0 +1,16 @@
+name: medical
+
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - openai
+  - gtts
+  - numpy==1.24.1
+  - ffmpeg
+  - python-dotenv
+  - streamlit
+  - pip:
+      - git+https://github.com/openai/whisper.git 
