@@ -15,8 +15,8 @@ if not api_key:
     st.stop()
 
 # Set OpenAI API key
-openai.api_key = api_key
-client = OpenAI()
+# openai.api_key = api_key
+client = OpenAI(api_key=api_key)
 
 # Upload audio file
 audio_file = st.file_uploader("Upload an audio file", type=["mp3", "wav", "m4a"])
