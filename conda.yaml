@@ -13,5 +13,6 @@ dependencies:
   - python-dotenv
   - streamlit
   - pipreqs
+  - streamlit-extras
   - pip:
       - git+https://github.com/openai/whisper.git 

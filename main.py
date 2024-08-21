@@ -3,6 +3,7 @@ import whisper
 import openai
 from gtts import gTTS
 from openai import OpenAI
+import streamlit.components.v1 as components
 
 # Streamlit app
 st.title("Audio Transcription and Summarization App")
@@ -60,3 +61,14 @@ if audio_file is not None:
         st.audio(output_file)
 
     text_to_speech(summary, "short_podcast.mp3")
+
+# Add the "Buy me a coffee" button at the bottom of the app
+components.html(
+    """
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+    data-name="bmc-button" data-slug="tejeshb" data-color="#FFDD00" data-emoji=""  
+    data-font="Comic" data-text="Buy me a coffee" data-outline-color="#000000" 
+    data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+    """,
+    height=70
+)
