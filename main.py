@@ -6,7 +6,8 @@ from openai import OpenAI
 import streamlit.components.v1 as components
 
 # Streamlit app
-st.title("Audio Transcription and Summarization App")
+st.title("AI Podcast")
+st.image("header_img.png", use_column_width=True)
 
 # Input API key
 api_key = st.text_input("Enter your OpenAI API key:", type="password")
