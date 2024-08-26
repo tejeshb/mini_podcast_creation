@@ -11,6 +11,9 @@ st.image("header_img.png", use_column_width=True)
 
 # Input API key
 api_key = st.sidebar.text_input("Enter your OpenAI API key:", type="password")
+
+
+
 if not api_key:
     st.warning("Please enter your OpenAI API key to proceed.")
     st.stop()
@@ -57,9 +60,20 @@ if audio_file is not None:
     # Convert the summary to speech
     st.write("Converting summary to speech...")
     def text_to_speech(text, output_file):
-        tts = gTTS(text)
-        tts.save(output_file)
+    # Assuming `client` is properly initialized and configured before calling this function
+        response = client.audio.speech.create(
+            model="tts-1",
+            voice="alloy",
+            input=text
+        )
+        
+        # Write the audio content to a file
+        with open(output_file, "wb") as file:
+            file.write(response.content)
+
+        # Play the audio file in Streamlit
         st.audio(output_file)
+
 
     text_to_speech(summary, "short_podcast.mp3")
 
